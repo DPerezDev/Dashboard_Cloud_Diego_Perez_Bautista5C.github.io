@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <!-- Vinculamos nuestra hoja de estilos local -->
+    <link rel="stylesheet" href="../Practicas/layout.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container header-content">
+            <h1>Simulador de Red Social 5C</h1>
+            <nav>
+                <a href="../Practicas/index.html" class="nav-link">Inicio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <button onclick="cargarProductos()">Ver Productos</button>
+       
+        <!-- Contenedor vacío donde JS colocará las tarjetas -->
+        <div id="contenedor-productos"></div>
+    </main>
+   
+    <footer>
+        <p>&copy; 2026 Prácticas en clase - Diego Pérez Bautista</p>
+    </footer>
+
+    <!-- Vinculamos nuestro script de lógica al final del body -->
+    <script src="Productos.js"></script>
+
+    
+</body>
+</html>

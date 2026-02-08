@@ -1,0 +1,61 @@
+/* Estilo base para la tarjeta del personaje */
+.practice-card {
+    background-color: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 6px; /* Bordes redondeados */
+    padding: 2rem;
+    transition: all 0.2s ease; /* Suaviza la animación del hover */
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    margin: 10px; /* Separación entre tarjetas */
+    max-width: 350px; /* Ancho máximo para que no se estiren demasiado */
+    display: inline-block; /* Para que se pongan una al lado de otra */
+    vertical-align: top;
+}
+
+/* Colores para el estado */
+    .activo { color: green; font-weight: bold; }
+    .inactivo { color: red; font-weight: bold; } 
+
+/* Efecto al pasar el mouse por encima */
+
+.practice-card:hover {
+    border-color: #2a2a2a;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); 
+    transform: translateY(-5px); 
+}
+
+.practice-title {
+    color: #000000; 
+}
+
+#contenedor-productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+.comprar{
+    background-color: #6a0dad;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}

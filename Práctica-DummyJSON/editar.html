@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle Producto</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../Practicas/layout.css">
+</head>
+<body>
+    
+    <header>
+        <div class="container header-content">
+            <h1>DummyJson</h1>
+            <nav>
+                <a href="../Practicas/index.html" class="nav-link">Inicio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="practice-header">
+            <h1 class="practice-title-main">Editar Producto</h1>
+
+            <div class="contenedor-ProductoNuevo">
+                <div class="form-group">
+                    <label>Nombre del Producto:</label>
+                    <input type="text" id="titulo" placeholder="Ej. iPhone 15">
+                </div>
+                
+                <div class="form-group">
+                    <label>Precio ($):</label>
+                    <input type="number" id="precio" placeholder="0.00">
+                </div>
+
+                <div class="form-group">
+                    <label>Categoría:</label>
+                    <select id="categoria">
+                        <option value="smartphones">Smartphones</option>
+                        <option value="laptops">Laptops</option>
+                        <option value="fragrances">Fragancias</option>
+                        <option value="skincare">Cuidado de piel</option>
+                        <option value="groceries">Comestibles</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Descripción:</label>
+                    <textarea id="descripcion" rows="4" placeholder="Detalles del producto..."></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>URL imagen (opcional):</label>
+                    <input type="text" id="imagen" placeholder="https://...">
+                </div>
+                
+                <div class="form-button">
+                    <button  class="btn-Regresar" onclick="window.history.back()"> Volver</button>
+                    <button  class="btn-back" onclick="editarProducto()">Guardar Cambios</button>
+                </div>
+                <div id="mensaje"></div>
+            </div>
+        </div>
+
+        <script src="editar.js"></script>
+    </main>
+    
+    <footer>
+        <p>&copy; 2026 Prácticas en clase - Diego Pérez Bautista</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../Practicas/layout.css">
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>DummyJson</h1>
+            <nav>
+                <a href="../Practicas/index.html" class="nav-link">Inicio</a>
+            </nav>
+        </div>
+    </header>
+
+   <main class="layout-productos">
+        <div class="practice-header">
+            <h1 class="practice-title-main">Productos</h1>
+
+            <div class="barra-acciones">
+                <select id="categorias" class="select-ordenar">
+                    <option value="">Todas las categorías</option>
+                </select>
+                
+                <input type="text" id="buscar-productos" class="busqueda" placeholder="Buscar productos...">
+
+                <select id="ordenar" class="select-ordenar">
+                    <option value="">Ordenar por</option>
+                    <option value="price-asc">Precio Menor</option>
+                    <option value="price-desc">Precio Mayor</option>
+                    <option value="title-asc">Título A-Z</option>
+                    <option value="title-desc">Título Z-A</option>
+                </select>
+
+                <a href="add.html" class="btn-nuevo">Nuevo Producto</a>
+            </div>
+
+        </div>
+
+        <div id="contenedor-producto"></div>
+
+        <div class="paginacion">
+            <button id="btn-anterior">Anterior</button>
+            <span id="numeros-paginacion"></span>
+            <button id="btn-siguiente">Siguiente</button>
+        </div>
+
+        <script src="main.js"></script> 
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Prácticas en clase - Diego Pérez Bautista</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook 5C</title>
+
+    
+    <link rel="stylesheet" href="../Practicas/layout.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container header-content">
+            <h1>Simulador de Red Social 5C</h1>
+            <nav>
+                <a href="../Practicas/index.html" class="nav-link">Inicio</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <div class="perfil-header">
+            <select name="select-usuario" id="select-usuario" onchange="cargaMuro()">
+                <option value="">Selecciona un usuario...</option>
+            </select>
+
+            <img src="" id="avatar-img" class="avatar" style="display: none;">
+
+            <h2 id="nombre-usuario"></h2>
+        </div>
+
+        <div id="muro"></div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Prácticas en clase - Diego Pérez Bautista</p>
+    </footer>
+
+    <script src="main.js"></script>
+
+</body>
+</html>
