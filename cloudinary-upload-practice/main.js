@@ -6,6 +6,20 @@ const button = document.getElementById("uploadBtn");
 const statusText = document.getElementById("status");
 const preview = document.getElementById("preview");
 
+input.addEventListener("change", function () {
+    const file = input.files[0];
+
+    if (file && file.type.startsWith("image/")) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            preview.src = e.target.result;
+            preview.style.display = "block";
+        };
+        reader.readAsDataURL(file);
+    }
+});
+
+
 button.addEventListener("click", function () {
 
     const file = input.files[0];
