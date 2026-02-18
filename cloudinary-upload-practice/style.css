@@ -18,23 +18,26 @@ main h2 {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
     max-width: 520px;
     margin: auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.upload-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
-}
-
-input[type="file"] {
+input[type="file"],
+#transformSelect {
     display: block;
     width: 100%;
     padding: 10px;
     border-radius: 10px;
     border: 1px solid #d1d5db;
     background-color: #f9fafb;
-    margin-bottom: 20px;
-    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+}
+
+.button-group button {
+    flex: 1;
 }
 
 button {
@@ -46,17 +49,7 @@ button {
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.button-group {
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
-}
-
-.button-group button {
-    flex: 1;
+    transition: 0.3s;
 }
 
 button:hover {
@@ -67,8 +60,6 @@ button:hover {
 button:disabled {
     background: #9ca3af;
     cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
 }
 
 #status {
@@ -85,16 +76,4 @@ button:disabled {
     border-radius: 14px;
     display: none;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-    animation: fadeIn 0.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: scale(0.95);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
 }
