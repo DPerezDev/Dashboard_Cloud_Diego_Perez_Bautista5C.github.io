@@ -41,9 +41,33 @@ button.addEventListener("click", function () {
         return;
     }
 
+    // Determinar transformación seleccionada
+    let transformation = "";
+
+    switch (transformSelect.value) {
+        case "grayscale":
+            transformation = "e_grayscale";
+            break;
+
+        case "profile":
+            transformation = "w_200,h_200,c_fill,g_face,r_max";
+            break;
+
+        case "rounded":
+            transformation = "r_40";
+            break;
+
+        default:
+            transformation = "";
+    }
+
     const formData = new FormData();
     formData.append("file", file);
     formData.append("upload_preset", preset);
+    
+    if (transformation !== "") {
+        formData.append("transformation", transformation);
+    }
 
     button.disabled = true;
     statusText.textContent = "Subiendo...";
@@ -89,36 +113,4 @@ newImageBtn.addEventListener("click", function () {
     preview.style.display = "none";
     statusText.textContent = "";
     transformSelect.value = "original";
-});
-
-function applyTransformation(url, transformation) {
-    const parts = url.split("/upload/");
-    return parts[0] + "/upload/" + transformation + "/" + parts[1];
-}
-
-transformSelect.addEventListener("change", function () {
-
-    if (!uploadedImageUrl) return;
-
-    let transformedUrl = uploadedImageUrl;
-
-    switch (transformSelect.value) {
-
-        case "grayscale":
-            transformedUrl = applyTransformation(uploadedImageUrl, "e_grayscale");
-            break;
-
-        case "profile":
-            transformedUrl = applyTransformation(uploadedImageUrl, "w_200,h_200,c_fill,g_face,r_max");
-            break;
-
-        case "rounded":
-            transformedUrl = applyTransformation(uploadedImageUrl, "r_40");
-            break;
-
-        default:
-            transformedUrl = uploadedImageUrl;
-    }
-
-    preview.src = transformedUrl;
 });
