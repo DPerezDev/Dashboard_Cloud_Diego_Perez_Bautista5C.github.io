@@ -1,5 +1,5 @@
-const cloudname="Precet_5C"
-const preset="dnu57rgek"
+const cloudname="dnu57rgek"
+const preset="Precet_5C"  
 
 const input = document.getElementById("fileinput");
 const button = document.getElementById("uploadBtn");
