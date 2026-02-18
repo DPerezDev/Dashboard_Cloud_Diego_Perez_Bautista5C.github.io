@@ -1,43 +1,101 @@
+/* Fondo general */
+body {
+    background: linear-gradient(135deg, #e9f0ff, #f7f9fc);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Título principal */
+main h2 {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 26px;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+/* Tarjeta principal */
 .upload-card {
-    margin-top: 20px;
-    padding: 20px;
-    border-radius: 12px;
-    background-color: #f5f5f5;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-    max-width: 500px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+    max-width: 520px;
+    margin: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.upload-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+}
+
+/* Input file personalizado */
 input[type="file"] {
-    margin-bottom: 15px;
-}
-
-button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 8px;
-    background-color: #0077ff;
-    color: white;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    background-color: #005fd1;
-}
-
-button:disabled {
-    background-color: gray;
-    cursor: not-allowed;
-}
-
-#preview {
-    margin-top: 20px;
-    max-width: 100%;
-    border-radius: 10px;
     display: block;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    background-color: #f9fafb;
+    margin-bottom: 20px;
+    cursor: pointer;
 }
 
+/* Botón principal */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* Hover */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+/* Botón deshabilitado */
+button:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Estado del mensaje */
 #status {
-    margin-top: 10px;
-    font-weight: bold;
+    margin-top: 15px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Imagen previa */
+#preview {
+    margin-top: 25px;
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 14px;
+    display: none;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Animación suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
