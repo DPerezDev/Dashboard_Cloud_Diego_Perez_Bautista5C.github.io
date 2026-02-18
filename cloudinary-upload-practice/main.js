@@ -91,7 +91,11 @@ newImageBtn.addEventListener("click", function () {
     transformSelect.value = "original";
 });
 
-// Aplicar transformaciones dinámicas
+function applyTransformation(url, transformation) {
+    const parts = url.split("/upload/");
+    return parts[0] + "/upload/" + transformation + "/" + parts[1];
+}
+
 transformSelect.addEventListener("change", function () {
 
     if (!uploadedImageUrl) return;
@@ -101,24 +105,15 @@ transformSelect.addEventListener("change", function () {
     switch (transformSelect.value) {
 
         case "grayscale":
-            transformedUrl = uploadedImageUrl.replace(
-                "/upload/",
-                "/upload/e_grayscale/"
-            );
+            transformedUrl = applyTransformation(uploadedImageUrl, "e_grayscale");
             break;
 
         case "profile":
-            transformedUrl = uploadedImageUrl.replace(
-                "/upload/",
-                "/upload/w_200,h_200,c_fill,g_face,r_max/"
-            );
+            transformedUrl = applyTransformation(uploadedImageUrl, "w_200,h_200,c_fill,g_face,r_max");
             break;
 
         case "rounded":
-            transformedUrl = uploadedImageUrl.replace(
-                "/upload/",
-                "/upload/r_40/"
-            );
+            transformedUrl = applyTransformation(uploadedImageUrl, "r_40");
             break;
 
         default:
