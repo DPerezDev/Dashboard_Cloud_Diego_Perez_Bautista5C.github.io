@@ -1,10 +1,8 @@
-/* Fondo general */
 body {
     background: linear-gradient(135deg, #e9f0ff, #f7f9fc);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* Título principal */
 main h2 {
     margin-top: 20px;
     margin-bottom: 30px;
@@ -13,7 +11,6 @@ main h2 {
     color: #1f2937;
 }
 
-/* Tarjeta principal */
 .upload-card {
     background: #ffffff;
     padding: 30px;
@@ -29,7 +26,6 @@ main h2 {
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
 }
 
-/* Input file personalizado */
 input[type="file"] {
     display: block;
     width: 100%;
@@ -41,7 +37,6 @@ input[type="file"] {
     cursor: pointer;
 }
 
-/* Botón principal */
 button {
     width: 100%;
     padding: 12px;
@@ -55,13 +50,11 @@ button {
     transition: all 0.3s ease;
 }
 
-/* Hover */
 button:hover {
     transform: translateY(-2px);
     box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
 }
 
-/* Botón deshabilitado */
 button:disabled {
     background: #9ca3af;
     cursor: not-allowed;
@@ -69,14 +62,12 @@ button:disabled {
     transform: none;
 }
 
-/* Estado del mensaje */
 #status {
     margin-top: 15px;
     font-weight: 600;
     text-align: center;
 }
 
-/* Imagen previa */
 #preview {
     margin-top: 25px;
     width: 100%;
@@ -88,7 +79,6 @@ button:disabled {
     animation: fadeIn 0.5s ease-in-out;
 }
 
-/* Animación suave */
 @keyframes fadeIn {
     from {
         opacity: 0;

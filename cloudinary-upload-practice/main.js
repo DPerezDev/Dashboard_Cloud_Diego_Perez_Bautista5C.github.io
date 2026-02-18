@@ -82,3 +82,12 @@ button.addEventListener("click", function () {
     });
 
 });
+
+const newImageBtn = document.getElementById("newImageBtn");
+
+newImageBtn.addEventListener("click", function () {
+    input.value = "";
+    preview.src = "";
+    preview.style.display = "none";
+    statusText.textContent = "";
+});
