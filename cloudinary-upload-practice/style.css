@@ -37,6 +37,18 @@ input[type="file"] {
     cursor: pointer;
 }
 
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #2563eb, #1e40af);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
 .button-group {
     display: flex;
     gap: 15px;
