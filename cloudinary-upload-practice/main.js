@@ -1,5 +1,5 @@
-const cloudname="dnu57rgek"
-const preset="Precet_5C"  
+const cloudname = "dnu57rgek";
+const preset = "Precet_5C";
 
 const input = document.getElementById("fileinput");
 const button = document.getElementById("uploadBtn");
@@ -10,16 +10,16 @@ button.addEventListener("click", function () {
 
     const file = input.files[0];
 
-    // Validación si no selecciona archivo
+    // Validación: no hay archivo
     if (!file) {
         statusText.textContent = "Selecciona una imagen primero.";
         statusText.style.color = "red";
         return;
     }
 
-    // Validación de tipo
+    // Validación: no es imagen
     if (!file.type.startsWith("image/")) {
-        statusText.textContent = "El archivo debe ser una imagen.";
+        statusText.textContent = "El archivo debe ser una imagen válida.";
         statusText.style.color = "red";
         return;
     }
@@ -28,6 +28,7 @@ button.addEventListener("click", function () {
     formData.append("file", file);
     formData.append("upload_preset", preset);
 
+    // Estado de carga
     button.disabled = true;
     statusText.textContent = "Subiendo...";
     statusText.style.color = "black";
@@ -37,9 +38,13 @@ button.addEventListener("click", function () {
         body: formData
     })
     .then(function (response) {
+
         if (!response.ok) {
-            throw new Error("Error en la subida");
+            return response.json().then(function (err) {
+                throw new Error(err.error.message);
+            });
         }
+
         return response.json();
     })
     .then(function (data) {
@@ -48,12 +53,15 @@ button.addEventListener("click", function () {
         statusText.style.color = "green";
 
         preview.src = data.secure_url;
+        preview.style.display = "block";
 
         button.disabled = false;
     })
     .catch(function (error) {
 
-        statusText.textContent = "Ocurrió un error al subir la imagen.";
+        console.error("Error real:", error.message);
+
+        statusText.textContent = "Error: " + error.message;
         statusText.style.color = "red";
 
         button.disabled = false;
